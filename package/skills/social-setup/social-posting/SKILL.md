@@ -35,15 +35,23 @@ It contains one word: `draft` or `auto`. If the file is missing, use `draft`.
 **Problems:** <list, or "none">
 
 
-## Images (follow these steps exactly, one post at a time)
-Never pass a file path from the PC (like `C:/Users/...`). The Postiz tools cannot read the PC's disk. Use a web address instead.
-1. Image must be a public web address ending in .jpg or .png (a raw GitHub link works). Keep it under 1 MB; prefer .jpg.
-2. Call `uploadFromUrlTool` with that address. Read its answer. It returns the stored image: note the exact `id` and `path`.
-3. Call `integrationSchema` for the platform to see the post format.
-4. Call `integrationSchedulePostTool` with the post text and the image object exactly as the schema shows, using the `id` and `path` from step 2. Do not invent fields.
-5. If a tool returns an error: copy the error word for word to the user and STOP. Do not try more than 2 times. Do not create duplicates.
-6. Check with `postsListTool` that the post exists once, with the right time and an image. Report it.
-Never search for keys or .env files. The Postiz tools already have access.
+## Posts with a picture: use the ONE-COMMAND tool (preferred)
+The tool is `%LOCALAPPDATA%\hermes\social-tools\postiz_post.py`. It makes a picture card, uploads it to Postiz and creates the post. It reads the posting switch itself: `draft` creates a draft, `auto` schedules. It never prints the key.
+
+Steps, one post at a time:
+1. Write the post text. Save it to a text file, for example `%LOCALAPPDATA%\hermes\social-tools\work\post1.txt`.
+2. Run:
+   `python "%LOCALAPPDATA%\hermes\social-tools\postiz_post.py" --text-file <file> --headline "<5 to 9 words from the post>" --sub "<one short line>" --kicker "<2 words topic>" --when "YYYY-MM-DD HH:MM" --channel Louis`
+   (`--channel Beacon` posts to the Beacon of Hope Page. `--theme teal|night|green|sunset` changes the colour.)
+3. Read the last line that starts with `RESULT:`. Report it to the user. If you see `ERROR:`, copy it word for word to the user and STOP.
+4. Never run it twice for the same post. Check with `postsListTool` if unsure.
+
+Picture style: dark gradient card, white bold headline (the hook, 5 to 9 words), one short line below, a small topic label on top. Vary the `--theme` across posts. Keep the same style so the feed looks consistent.
+
+Never search for keys or .env files. Never pass a file path from the PC to a Postiz MCP tool. Use the script.
+
+## Fallback: images through the Postiz MCP tools
+Only if the script cannot run. Use a public web address (raw GitHub link, small .jpg). Call `uploadFromUrlTool`, note the exact `id` and `path`, then `integrationSchedulePostTool` with the image exactly as `integrationSchema` shows. On any error: copy it to the user and STOP. Maximum 2 tries.
 
 ## Scheduling
-Mode must be `auto` to schedule. Use the user's time zone (Europe/Berlin) and give the time as an exact date and time. Before creating a post, call `postsListTool` and check the same post does not already exist.
+Mode must be `auto` to schedule. Use Europe/Berlin time. Before creating a post, call `postsListTool` and check the same post does not already exist.
