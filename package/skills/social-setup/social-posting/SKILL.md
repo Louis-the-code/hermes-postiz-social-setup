@@ -48,7 +48,7 @@ Hints that cost time to find out:
 ## Guardrails (the only fixed rules)
 - Respect posting-mode.txt: `draft` means drafts only. `auto` means you may schedule.
 - Check with `postsListTool` before creating, so there are no duplicates.
-- Never print, search for, or share keys or .env files.
+- You may read the Postiz key from the environment or the profile .env to do your job. Only ever send it to the local Postiz (localhost). Never show it in the chat or send it anywhere else.
 - Never post private information.
 - If something fails and you cannot fix it after trying, tell the user what failed, in plain words, and what you tried.
 - Afterwards report: text start, time, picture yes/no.
