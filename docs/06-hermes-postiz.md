@@ -10,9 +10,20 @@
 
 ## 6.2 Add Postiz as a tool in the public profile
 1. Open the public config: `hermes -p public config edit`
-2. Copy the block from `package/profiles/public/config-additions.yaml` into it.
-3. The MCP address is **(unverified)**. `package/postiz/setup-postiz.ps1` tries likely addresses and prints one that answers. If `/reload-mcp` fails, check the Postiz docs: https://docs.postiz.com/mcp/setup
-4. Start `public chat` and type `/reload-mcp`.
+2. **Check first:** search the file for `mcp_servers`. Most configs already have one (with entries like wikipedia). **Never add a second `mcp_servers:`** (Hermes then refuses to read the whole file: "duplicate key"). Add `postiz:` as one more entry under the existing one, indented 2 spaces:
+   ```
+   mcp_servers:
+     postiz:
+       url: "http://localhost:4007/api/mcp"
+       headers:
+         Authorization: "Bearer ${POSTIZ_API_KEY}"
+       trust: full
+       timeout: 120
+   ```
+   If there is none, paste the whole block at the bottom. Never write the real key in this file.
+3. Verified address: `http://localhost:4007/api/mcp` (tested: 21 Postiz tools found).
+4. Test it: `hermes -p public mcp test postiz`. Expect "Connected" and a tool list. A `401` means the saved key is wrong: copy it again from Postiz (Reveal, Copy), run the `config set` command again, and test again. A good key is 64 characters.
+5. Start `public chat` and type `/reload-mcp`.
 
 `trust: full` is needed for scheduled jobs to post. Use `trust: untrusted` if you'd rather be asked before every post (scheduled posting then stops working).
 

@@ -9,7 +9,9 @@
 | `mapping key "LINKEDIN_CLIENT_ID" already defined` | Duplicate line in `docker-compose.yaml` | Keep one pair; fill in the existing empty one (doc 5) |
 | `NotEnoughScopes` | Advertising API not approved yet | Wait for LinkedIn's email; post manually meanwhile |
 | Redirect URL mismatch | URL in the app differs from Postiz's address | Use the exact address LinkedIn shows; add it in the Auth tab |
-| `/reload-mcp` fails for Postiz | MCP address unverified | Re-run `setup-postiz.ps1` to find the address; check https://docs.postiz.com/mcp/setup |
+| `formatting error ... duplicate key "mcp_servers"` | Config already had `mcp_servers`; a second one was added | Remove the added block (or the old one) so only one `mcp_servers:` remains. Backups: `config.yaml.bak` |
+| `/reload-mcp` fails: `mcp_servers_unavailable` | Postiz entry rejected | Run `hermes -p public mcp test postiz` to see the real reason |
+| `mcp test` shows `401 Invalid API Key` | Saved key is wrong, old, or has extra characters | Copy the key again from Postiz (Settings → API Key → Reveal → Copy), run `config set POSTIZ_API_KEY` again |
 | Private chat errors | Model name or context | `ollama list`; recreate the 64K model (doc 2) |
 | Scheduled job didn't post | Posting switch is `draft` | Say `posting on` in `public chat`, or check `posting-mode.txt` |
 | Hermes cron can't use Postiz | MCP `trust` is `untrusted` | Set `trust: full` (doc 6) |
