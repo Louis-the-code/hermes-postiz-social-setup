@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 330" role="img" aria-label="Public profile versus private profile">
+<rect width="1200" height="330" rx="20" fill="#f8fafc" stroke="#e2e8f0"/>
+<g font-family="Segoe UI,Helvetica,Arial,sans-serif">
+<rect x="40" y="30" width="540" height="270" rx="16" fill="#ecfdf5" stroke="#10b981" stroke-width="2"/>
+<text x="70" y="78" font-size="28" font-weight="700" fill="#065f46">public profile</text>
+<text x="70" y="116" font-size="19" fill="#134e4a">Represents you online</text>
+<g font-size="19" fill="#334155"><text x="70" y="160">✔ Web search and research</text><text x="70" y="192">✔ Posts through Postiz</text><text x="70" y="224">✔ Draft / auto switch</text><text x="70" y="256">✔ Cloud models allowed</text></g>
+<rect x="620" y="30" width="540" height="270" rx="16" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+<text x="650" y="78" font-size="28" font-weight="700" fill="#7f1d1d">private profile</text>
+<text x="650" y="116" font-size="19" fill="#7f1d1d">For confidential work</text>
+<g font-size="19" fill="#334155"><text x="650" y="160">✔ Local model only (Ollama)</text><text x="650" y="192">✘ No web</text><text x="650" y="224">✘ No posting</text><text x="650" y="256">✘ No cloud keys, no fallback</text></g>
+</g></svg>

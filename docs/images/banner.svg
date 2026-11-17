@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" role="img" aria-label="Hermes plus Postiz: free auto-posting setup">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1e1b4b"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs>
+<rect width="1200" height="320" rx="24" fill="url(#g)"/>
+<g fill="none" stroke="#5eead4" stroke-opacity=".25" stroke-width="2"><circle cx="1040" cy="60" r="150"/><circle cx="1040" cy="60" r="100"/><circle cx="1040" cy="60" r="50"/></g>
+<text x="64" y="128" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="58" font-weight="700" fill="#fff">Hermes + Postiz</text>
+<text x="64" y="188" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="30" fill="#99f6e4">Free social auto-posting with a draft / auto switch</text>
+<text x="64" y="244" font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="22" fill="#e2e8f0">Windows · beginner friendly · real problems and fixes included</text>
+<g font-family="Segoe UI,Helvetica,Arial,sans-serif" font-size="18" font-weight="600">
+<rect x="64" y="266" width="120" height="32" rx="16" fill="#ffffff" fill-opacity=".15"/><text x="124" y="288" text-anchor="middle" fill="#fff">Free</text>
+<rect x="196" y="266" width="170" height="32" rx="16" fill="#ffffff" fill-opacity=".15"/><text x="281" y="288" text-anchor="middle" fill="#fff">Self-hosted</text>
+<rect x="378" y="266" width="170" height="32" rx="16" fill="#ffffff" fill-opacity=".15"/><text x="463" y="288" text-anchor="middle" fill="#fff">No secrets</text></g>
+</svg>

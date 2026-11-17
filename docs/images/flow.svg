@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-label="Flow: You talk to Hermes, Hermes drafts in Postiz, you approve, Postiz posts to LinkedIn and other platforms">
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#475569"/></marker></defs>
+<rect width="1200" height="360" rx="20" fill="#f8fafc" stroke="#e2e8f0"/>
+<g font-family="Segoe UI,Helvetica,Arial,sans-serif" text-anchor="middle">
+<rect x="40" y="120" width="200" height="110" rx="14" fill="#e0e7ff" stroke="#6366f1" stroke-width="2"/><text x="140" y="165" font-size="24" font-weight="700" fill="#1e1b4b">You</text><text x="140" y="198" font-size="17" fill="#334155">“Write a post about…”</text>
+<rect x="320" y="120" width="220" height="110" rx="14" fill="#ccfbf1" stroke="#0d9488" stroke-width="2"/><text x="430" y="165" font-size="24" font-weight="700" fill="#134e4a">Hermes Agent</text><text x="430" y="198" font-size="17" fill="#334155">public profile</text>
+<rect x="620" y="120" width="220" height="110" rx="14" fill="#fef3c7" stroke="#d97706" stroke-width="2"/><text x="730" y="165" font-size="24" font-weight="700" fill="#78350f">Postiz</text><text x="730" y="198" font-size="17" fill="#334155">on your PC (Docker)</text>
+<rect x="920" y="40" width="240" height="70" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="1040" y="84" font-size="21" font-weight="700" fill="#1e3a8a">LinkedIn</text>
+<rect x="920" y="145" width="240" height="70" rx="14" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="1040" y="189" font-size="21" font-weight="700" fill="#1e3a8a">Bluesky · Mastodon</text>
+<rect x="920" y="250" width="240" height="70" rx="14" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 5"/><text x="1040" y="294" font-size="21" fill="#475569">More platforms…</text>
+<g stroke="#475569" stroke-width="3" fill="none" marker-end="url(#a)"><path d="M240,175 H316"/><path d="M540,175 H616"/><path d="M840,150 C880,110 880,80 916,76"/><path d="M840,175 H916"/><path d="M840,200 C880,240 880,280 916,285"/></g>
+<text x="278" y="152" font-size="15" fill="#475569">asks</text><text x="578" y="152" font-size="15" fill="#475569">draft</text>
+<rect x="590" y="262" width="280" height="62" rx="12" fill="#fff" stroke="#16a34a" stroke-width="2"/><text x="730" y="288" font-size="17" font-weight="700" fill="#166534">Switch: draft = you approve</text><text x="730" y="311" font-size="17" font-weight="700" fill="#166534">auto = posts by itself</text>
+</g></svg>
