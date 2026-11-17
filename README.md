@@ -163,5 +163,8 @@ package/           the files the installer uses (skills, profiles, scripts)
 ## Contributing
 Found a step that's unclear or a new problem? Open an issue or a pull request. Never include keys, tokens or personal data.
 
+## How this was made
+I (Louis) built and tested this setup on my own PC, step by step, with Claude (by Anthropic) as my AI assistant. Every problem in [problems/](problems/README.md) really happened to me.
+
 ## License
 [MIT](LICENSE)
