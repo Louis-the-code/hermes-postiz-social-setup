@@ -27,6 +27,7 @@ Goal: once per run, find the single most important AI news from the last 7 days 
 ## Format
 - Follow the LinkedIn text format from the social-posting skill: hook on line 1, one sentence per line, blank line between ideas, 600 to 1300 characters.
 - Structure: hook line, what happened (2 to 3 lines), why it matters (1 to 2 lines), Sources (2 links, one per line), one question, 3 hashtags including #AINews.
+- Picture idea: it must relate to the story in a clever, minimalist way. One simple visual idea drawn with shapes and type, for example the key number from the news set large, two shapes that show the change (bigger/smaller, before/after), or a plain symbol of the topic. Few colours, lots of empty space, no clutter. No company logos, no photos of real people, no stock-photo look. The headline stays short and readable on a phone.
 - Picture: draw it locally, with Pillow or any local script (text on a dark gradient). Do not use a paid image-generation model: it needs credits and is not needed for a text card. `package/social-tools/postiz_post.py` already makes this card. Same card style as the owner's other posts (dark gradient, white bold headline, short line, topic label "AI NEWS"), portrait 1080 x 1350, small .jpg. Attach it.
 
 ## Publishing
