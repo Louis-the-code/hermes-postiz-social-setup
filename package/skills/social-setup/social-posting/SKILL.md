@@ -35,9 +35,19 @@ It contains one word: `draft` or `auto`. If the file is missing, use `draft`.
 **Problems:** <list, or "none">
 
 
+## LinkedIn text format (always)
+- Line 1 is the hook. Make it stand alone and stay under about 140 characters, because LinkedIn cuts the post after a few lines ("see more").
+- One sentence per line. Put a BLANK line between ideas. Never write a block of text.
+- Short lines: 8 to 15 words. Plain words.
+- Lists: one item per line, starting with "→" or "•".
+- Total length 600 to 1300 characters.
+- End with one question to invite comments, then a blank line, then 3 hashtags.
+- Real line breaks must reach Postiz: send the text with newline characters (\n), and check the result in postsListTool or the preview.
+- The post must match its picture: the picture shows the hook.
+
 ## Posts with a picture
 Goal: every post goes out with a simple picture that matches its text, in one consistent style.
-Style: dark gradient background, big white bold hook (5 to 9 words), one short line below, a small topic label on top. Square, 1080 px, under 1 MB (.jpg).
+Style: dark gradient background, big white bold hook (5 to 9 words), one short line below, a small topic label on top. Portrait 4:5, 1080 x 1350 px, under 1 MB (.jpg).
 How you make and attach the picture is your choice. Use whatever works best: your image tool, your own code, or the optional helper below. If one way fails, try another.
 
 Optional helper: `%LOCALAPPDATA%\hermes\social-tools\postiz_post.py` (run it with `--help`). It makes a card, uploads it to Postiz and creates the post in one go. Use it, copy ideas from it, or ignore it.
