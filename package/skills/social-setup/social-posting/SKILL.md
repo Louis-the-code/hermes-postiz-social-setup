@@ -35,23 +35,20 @@ It contains one word: `draft` or `auto`. If the file is missing, use `draft`.
 **Problems:** <list, or "none">
 
 
-## Posts with a picture: use the ONE-COMMAND tool (preferred)
-The tool is `%LOCALAPPDATA%\hermes\social-tools\postiz_post.py`. It makes a picture card, uploads it to Postiz and creates the post. It reads the posting switch itself: `draft` creates a draft, `auto` schedules. It never prints the key.
+## Posts with a picture
+Goal: every post goes out with a simple picture that matches its text, in one consistent style.
+Style: dark gradient background, big white bold hook (5 to 9 words), one short line below, a small topic label on top. Square, 1080 px, under 1 MB (.jpg).
+How you make and attach the picture is your choice. Use whatever works best: your image tool, your own code, or the optional helper below. If one way fails, try another.
 
-Steps, one post at a time:
-1. Write the post text. Save it to a text file, for example `%LOCALAPPDATA%\hermes\social-tools\work\post1.txt`.
-2. Run:
-   `python "%LOCALAPPDATA%\hermes\social-tools\postiz_post.py" --text-file <file> --headline "<5 to 9 words from the post>" --sub "<one short line>" --kicker "<2 words topic>" --when "YYYY-MM-DD HH:MM" --channel Louis`
-   (`--channel Beacon` posts to the Beacon of Hope Page. `--theme teal|night|green|sunset` changes the colour.)
-3. Read the last line that starts with `RESULT:`. Report it to the user. If you see `ERROR:`, copy it word for word to the user and STOP.
-4. Never run it twice for the same post. Check with `postsListTool` if unsure.
+Optional helper: `%LOCALAPPDATA%\hermes\social-tools\postiz_post.py` (run it with `--help`). It makes a card, uploads it to Postiz and creates the post in one go. Use it, copy ideas from it, or ignore it.
+Hints that cost time to find out:
+- The Postiz tools cannot read PC file paths. An image must be uploaded first (a web address with `uploadFromUrlTool`, or the Postiz upload API with the key from the environment), then attached using the `id` and `path` the upload returns.
+- Keep images small.
 
-Picture style: dark gradient card, white bold headline (the hook, 5 to 9 words), one short line below, a small topic label on top. Vary the `--theme` across posts. Keep the same style so the feed looks consistent.
-
-Never search for keys or .env files. Never pass a file path from the PC to a Postiz MCP tool. Use the script.
-
-## Fallback: images through the Postiz MCP tools
-Only if the script cannot run. Use a public web address (raw GitHub link, small .jpg). Call `uploadFromUrlTool`, note the exact `id` and `path`, then `integrationSchedulePostTool` with the image exactly as `integrationSchema` shows. On any error: copy it to the user and STOP. Maximum 2 tries.
-
-## Scheduling
-Mode must be `auto` to schedule. Use Europe/Berlin time. Before creating a post, call `postsListTool` and check the same post does not already exist.
+## Guardrails (the only fixed rules)
+- Respect posting-mode.txt: `draft` means drafts only. `auto` means you may schedule.
+- Check with `postsListTool` before creating, so there are no duplicates.
+- Never print, search for, or share keys or .env files.
+- Never post private information.
+- If something fails and you cannot fix it after trying, tell the user what failed, in plain words, and what you tried.
+- Afterwards report: text start, time, picture yes/no.
