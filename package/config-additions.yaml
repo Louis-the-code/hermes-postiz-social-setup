@@ -1,0 +1,58 @@
+# Settings to MERGE into %LOCALAPPDATA%\hermes\config.yaml
+# Do NOT paste this whole file over your config.
+# For each block: if the top-level key (e.g. "security:") already exists, add/replace only the lines below it.
+# No API keys go in this file. Keys live in .env (set them with: hermes config set NAME value)
+
+# 1. Secret safety (redact_secrets is on by default; this makes it explicit)
+security:
+  redact_secrets: true
+
+# 2. Command approvals
+approvals:
+  mode: smart          # keep. Use "manual" in any profile that has BOTH web tools and terminal
+  cron_mode: deny      # scheduled jobs can never auto-run dangerous commands
+  single_query_mode: deny
+  unattended_mode: deny
+
+# 3. Keep keys out of anything the agent runs. Leave these EMPTY.
+terminal:
+  env_passthrough: []
+  docker_forward_env: []
+
+# 4. Ask before memory and skills are changed
+memory:
+  write_approval: true
+skills:
+  write_approval: true
+
+# 5. Firecrawl as an UNTRUSTED tool, limited to search + scrape
+#    Only if you run Firecrawl as an MCP server. If Firecrawl already works in Hermes, skip this block.
+#    First run: hermes config set FIRECRAWL_API_KEY your_key
+mcp_servers:
+  firecrawl:
+    command: "npx"
+    args: ["-y", "firecrawl-mcp"]
+    env:
+      FIRECRAWL_API_KEY: "${FIRECRAWL_API_KEY}"
+    trust: untrusted
+    timeout: 120
+    tools:
+      include: [firecrawl_search, firecrawl_scrape]
+      resources: false
+      prompts: false
+
+# 6. Cheaper model for sub-agents (research helpers). Change the model to one you have.
+delegation:
+  provider: "openrouter"
+  model: "google/gemini-3-flash-preview"
+  max_concurrent_children: 3
+  max_spawn_depth: 1
+
+# 7. Fallback when a provider stalls. Edit models to ones you actually use.
+#    Do NOT put the abliterated (uncensored) model here: it would get all the tools.
+fallback_providers:
+  - provider: openrouter
+    model: "deepseek/deepseek-chat"
+  - provider: custom
+    model: "qwen3:8b-64k"                      # a normal (censored) local model, 64K context
+    base_url: "http://localhost:11434/v1"

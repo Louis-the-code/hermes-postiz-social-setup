@@ -1,0 +1,38 @@
+# PRIVATE profile — merge into %LOCALAPPDATA%\hermes\profiles\private\config.yaml
+# Open it with:  hermes -p private config edit
+
+# Local model only (nothing leaves your PC).
+# Change "qwen3:8b-64k" to your local model name (see: ollama list). Needs 64K context.
+model:
+  provider: custom
+  default: "qwen3:8b-64k"
+  base_url: "http://localhost:11434/v1"
+
+# No cloud fallback. If the local model fails, it fails. It never switches to the cloud.
+fallback_providers: []
+
+# Sub-agents also stay local
+delegation:
+  base_url: "http://localhost:11434/v1"
+  model: "qwen3:8b-64k"
+  fallback_providers: []
+
+security:
+  redact_secrets: true
+
+approvals:
+  mode: smart
+  cron_mode: deny
+  single_query_mode: deny
+  unattended_mode: deny
+
+terminal:
+  env_passthrough: []
+  docker_forward_env: []
+
+memory:
+  write_approval: true
+skills:
+  write_approval: true
+
+# No MCP servers in this profile (no Firecrawl, no Postiz).

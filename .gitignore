@@ -1,0 +1,24 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+*.secret
+*secret*.txt
+auth.json
+*.pem
+*.key
+
+# Local Postiz install (contains secrets)
+postiz-docker-compose/
+docker-compose.yaml
+docker-compose.yml
+
+# Hermes data
+backups/
+posting-mode.txt
+state.db
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.zip

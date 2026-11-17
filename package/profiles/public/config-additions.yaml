@@ -1,0 +1,15 @@
+# PUBLIC profile — merge into %LOCALAPPDATA%\hermes\profiles\public\config.yaml
+# Open it with:  hermes -p public config edit
+# Also merge the blocks from the main config-additions.yaml (safety, approvals, Firecrawl).
+
+# Postiz (free, self-hosted) — lets Hermes create drafts / schedule posts
+# First:  hermes -p public config set POSTIZ_API_KEY your_postiz_key
+# The installer prints which URL works on your PC. Put it in "url".
+mcp_servers:
+  postiz:
+    url: "http://localhost:4007/api/mcp"
+    headers:
+      Authorization: "Bearer ${POSTIZ_API_KEY}"
+    trust: full             # needed so scheduled jobs can post. The draft/auto switch (posting-mode.txt) controls posting.
+                            # Want Hermes to ask before EVERY post instead? Change to: untrusted (scheduled posting then stops working)
+    timeout: 120
