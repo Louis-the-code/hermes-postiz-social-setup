@@ -8,4 +8,4 @@
 6. Gave Hermes the Postiz API key and added Postiz as an MCP server (doc 6).
 7. Tested: Hermes created a draft in Postiz and published nothing.
 
-Where it went wrong: see [problems](problems/README.md). 6 of the 12 problems were a duplicate line or a leaked secret.
+Where it went wrong: see [problems](problems/README.md). 3 of the 12 problems came from the same two mistakes: adding a duplicate line to a config file, and pasting a secret into a chat.
