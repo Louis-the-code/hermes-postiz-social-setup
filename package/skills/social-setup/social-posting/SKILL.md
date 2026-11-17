@@ -33,3 +33,17 @@ It contains one word: `draft` or `auto`. If the file is missing, use `draft`.
 **Mode:** draft | auto
 **Posts:** <platform> — <first line> — <draft / scheduled time / published link>
 **Problems:** <list, or "none">
+
+
+## Images (follow these steps exactly, one post at a time)
+Never pass a file path from the PC (like `C:/Users/...`). The Postiz tools cannot read the PC's disk. Use a web address instead.
+1. Image must be a public web address ending in .jpg or .png (a raw GitHub link works). Keep it under 1 MB; prefer .jpg.
+2. Call `uploadFromUrlTool` with that address. Read its answer. It returns the stored image: note the exact `id` and `path`.
+3. Call `integrationSchema` for the platform to see the post format.
+4. Call `integrationSchedulePostTool` with the post text and the image object exactly as the schema shows, using the `id` and `path` from step 2. Do not invent fields.
+5. If a tool returns an error: copy the error word for word to the user and STOP. Do not try more than 2 times. Do not create duplicates.
+6. Check with `postsListTool` that the post exists once, with the right time and an image. Report it.
+Never search for keys or .env files. The Postiz tools already have access.
+
+## Scheduling
+Mode must be `auto` to schedule. Use the user's time zone (Europe/Berlin) and give the time as an exact date and time. Before creating a post, call `postsListTool` and check the same post does not already exist.
