@@ -1,8 +1,8 @@
 ---
 name: notes-rag
-description: Answer questions from Louis's own notes and documents only, citing the file each fact came from.
+description: Answer questions from the owner's own notes and documents only, citing the file each fact came from.
 version: 1.0.0
-author: Louis Ampobi
+author: hermes-social-setup
 metadata:
   hermes:
     tags: [rag, notes, obsidian, documents]

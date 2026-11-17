@@ -77,6 +77,6 @@ It follows the switch: drafts when OFF, posts when ON.
 - **Abliterated model:** keep it out of Hermes.
 
 ## Undo
-- Restore files from `%LOCALAPPDATA%\hermes\backups\louis-upgrade-<date>\`.
+- Restore files from `%LOCALAPPDATA%\hermes\backups\hermes-upgrade-<date>\`.
 - Remove profiles: `hermes profile list`, then delete with `hermes profile --help` (shows the delete command).
 - Stop Postiz: in `%USERPROFILE%\Projects\postiz-docker-compose`, run `docker compose down`.

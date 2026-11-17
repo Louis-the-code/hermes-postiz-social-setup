@@ -2,7 +2,7 @@
 name: safe-scraping
 description: Collect public web data for free, slowly and legally, without logins or personal data.
 version: 1.0.0
-author: Louis Ampobi
+author: hermes-social-setup
 metadata:
   hermes:
     tags: [scraping, data, web, research]

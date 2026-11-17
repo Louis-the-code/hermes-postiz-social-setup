@@ -2,7 +2,7 @@
 name: scoped-automation
 description: Plan and run a task or scheduled job that does exactly what was asked and nothing more.
 version: 1.0.0
-author: Louis Ampobi
+author: hermes-social-setup
 metadata:
   hermes:
     tags: [automation, cron, workflow, guardrails]
@@ -25,4 +25,4 @@ Use this skill for multi-step tasks, workflows, and scheduled (cron) jobs.
 ## Report (use exactly this format)
 **Done:** <steps completed>
 **Output:** <file path or result>
-**Not done / needs Louis:** <list, or "none">
+**Not done / needs the owner:** <list, or "none">

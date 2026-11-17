@@ -17,14 +17,14 @@ function Add-Rules($soulPath, $rulesFile, $marker) {
     else { "  rules already present: $soulPath" }
 }
 function Copy-Skills($dest, $names) {
-    $d = Join-Path $dest "skills\louis"; New-Item -ItemType Directory -Force -Path $d | Out-Null
-    foreach ($n in $names) { Copy-Item -Recurse -Force (Join-Path $Here "skills\louis\$n") $d }
+    $d = Join-Path $dest "skills\social-setup"; New-Item -ItemType Directory -Force -Path $d | Out-Null
+    foreach ($n in $names) { Copy-Item -Recurse -Force (Join-Path $Here "skills\social-setup\$n") $d }
     "  skills: $($names -join ', ')"
 }
 
 # 1. Backup
 $Stamp = Get-Date -Format "yyyyMMdd-HHmmss"
-$Backup = Join-Path $HermesHome "backups\louis-upgrade-$Stamp"
+$Backup = Join-Path $HermesHome "backups\hermes-upgrade-$Stamp"
 New-Item -ItemType Directory -Force -Path $Backup | Out-Null
 foreach ($f in @("config.yaml", "SOUL.md")) { $p = Join-Path $HermesHome $f; if (Test-Path $p) { Copy-Item $p $Backup } }
 Write-Host "Backup: $Backup" -ForegroundColor Green
@@ -34,12 +34,12 @@ $All = @("sourced-research", "notes-rag", "scoped-automation", "safe-scraping", 
 # 2. Default profile
 Write-Host "DEFAULT profile" -ForegroundColor Cyan
 Copy-Skills $HermesHome @("sourced-research", "notes-rag", "scoped-automation", "safe-scraping")
-Add-Rules (Join-Path $HermesHome "SOUL.md") (Join-Path $Here "SOUL-additions.md") "Standing rules (added by Louis)"
+Add-Rules (Join-Path $HermesHome "SOUL.md") (Join-Path $Here "SOUL-additions.md") "Standing rules (added by the setup)"
 
 # 3. PUBLIC profile (copy of default: keys, skills, memory)
 Write-Host "PUBLIC profile" -ForegroundColor Cyan
 $Pub = Join-Path $HermesHome "profiles\public"
-if (-not (Test-Path $Pub)) { hermes profile create public --clone --description "Represents Louis in public. Posts via Postiz." }
+if (-not (Test-Path $Pub)) { hermes profile create public --clone --description "Represents the owner in public. Posts via Postiz." }
 Copy-Skills $Pub $All
 Add-Rules (Join-Path $Pub "SOUL.md") (Join-Path $Here "profiles\public\SOUL-additions.md") "PUBLIC profile"
 $Mode = Join-Path $Pub "posting-mode.txt"

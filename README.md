@@ -23,6 +23,10 @@ Written for a beginner on Windows 11. No coding knowledge needed.
 7. [Safety rules](docs/07-safety.md)
 8. [Troubleshooting](docs/08-troubleshooting.md)
 
+## Stuck?
+- [Problems and fixes](problems/README.md): 12 real problems, one short page each
+- [What was done, in order](JOURNEY.md)
+
 ## Needs
 - Windows PC, Hermes Agent desktop installed
 - Docker Desktop and Git

@@ -2,7 +2,7 @@
 name: sourced-research
 description: Research a question on the web and answer with a source URL for every claim.
 version: 1.0.0
-author: Louis Ampobi
+author: hermes-social-setup
 metadata:
   hermes:
     tags: [research, web, citations]

@@ -1,8 +1,8 @@
 ---
 name: social-posting
-description: Write and publish Louis's social posts through Postiz, with a draft/auto switch.
+description: Write and publish the owner's social posts through Postiz, with a draft/auto switch.
 version: 1.0.0
-author: Louis Ampobi
+author: hermes-social-setup
 metadata:
   hermes:
     tags: [social, linkedin, posting, postiz, automation]
@@ -21,7 +21,7 @@ It contains one word: `draft` or `auto`. If the file is missing, use `draft`.
 
 ## Steps for a post
 1. Read posting-mode.txt.
-2. Write the post in Louis's voice. Facts must have sources (use sourced-research). LinkedIn posts: ASD-STE100 style, short sentences.
+2. Write the post in the owner's voice. Facts must have sources (use sourced-research). LinkedIn posts: ASD-STE100 style, short sentences.
 3. Fit each platform: LinkedIn (professional), X (under 280 characters), Threads/Instagram/Facebook (casual), plus hashtags if useful.
 4. Mode `draft`: create the post in Postiz as a DRAFT (or save it to a file if Postiz is not reachable).
    Mode `auto`: schedule or publish it through Postiz.

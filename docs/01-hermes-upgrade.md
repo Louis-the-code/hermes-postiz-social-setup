@@ -28,7 +28,7 @@ You should see `public` and `private`.
 | private | `private chat` |
 
 ## Undo
-Restore the files from `%LOCALAPPDATA%\hermes\backups\louis-upgrade-<date>\`, delete the `skills\louis` folder, and remove the profiles with `hermes profile --help` (it shows the delete command).
+Restore the files from `%LOCALAPPDATA%\hermes\backups\hermes-upgrade-<date>\`, delete the `skills\social-setup` folder, and remove the profiles with `hermes profile --help` (it shows the delete command).
 
 ## Notes
 - The default safety settings in `package/config-additions.yaml` are mostly already Hermes defaults. You can skip merging them.
