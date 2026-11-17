@@ -115,17 +115,18 @@ In the chat:
 
 ## Where things go wrong
 
-These twelve problems cost the most time. Each has a one-page fix.
+These problems cost the most time. Each has a one-page fix.
 
 | Problem | Fix |
 |---|---|
 | A config line is "already defined" or a "duplicate key" | [#5](problems/05-duplicate-linkedin-key.md), [#8](problems/08-duplicate-mcp-servers.md): **search the file first, edit the existing line** |
+| Picture post fails (`Blocked IP`, `ECONNREFUSED`) | [#13](problems/13-image-post-blocked-ip.md), [#14](problems/14-image-post-econnrefused.md): **both fixes are needed** |
 | `401 Invalid API Key` | [#10](problems/10-mcp-401.md) |
 | `NotEnoughScopes` on LinkedIn | [#7](problems/07-notenoughscopes.md) |
 | A secret got pasted in a chat | [#6](problems/06-leaked-secret.md) |
 | `client_id` error | [#4](problems/04-client-id-error.md) |
 
-All twelve: [problems/](problems/README.md). The order things happened in: [JOURNEY.md](JOURNEY.md).
+All sixteen: [problems/](problems/README.md). The order things happened in: [JOURNEY.md](JOURNEY.md).
 
 ---
 

@@ -16,3 +16,7 @@ Every problem hit while building this setup. One short page each.
 |10|[`mcp test` says `401 Invalid API Key`](10-mcp-401.md)|
 |11|[`/reload-mcp` fails inside an open chat](11-chat-uses-old-key.md)|
 |12|["Model fallback ... provider overloaded"](12-model-fallback-warning.md)|
+|13|[Picture post fails: `Blocked IP`](13-image-post-blocked-ip.md)|
+|14|[Picture post fails: `ECONNREFUSED 127.0.0.1:4007`](14-image-post-econnrefused.md)|
+|15|[Hermes keeps failing or does odd things with posting](15-hermes-model-unreliable.md)|
+|16|[A post failed and vanished from the calendar](16-schedule-lost-after-error.md)|

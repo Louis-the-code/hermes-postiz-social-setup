@@ -14,6 +14,9 @@
 | `mcp test` shows `401 Invalid API Key` | Saved key is wrong, old, or has extra characters | Copy the key again from Postiz (Settings → API Key → Reveal → Copy), run `config set POSTIZ_API_KEY` again |
 | Private chat errors | Model name or context | `ollama list`; recreate the 64K model (doc 2) |
 | Scheduled job didn't post | Posting switch is `draft` | Say `posting on` in `public chat`, or check `posting-mode.txt` |
+| Picture post fails: `Blocked IP` | Postiz blocks `localhost` addresses | Add `DISABLE_SSRF_PROTECTION: 'true'` (problem 13) |
+| Picture post fails: `ECONNREFUSED 127.0.0.1:4007` | Postiz can't reach its own address from inside Docker | Add the `postiz-loopback` helper (problem 14) |
+| Hermes fails at posting | Weak model | `hermes -p public model`, pick a stronger one (problem 15) |
 | Hermes cron can't use Postiz | MCP `trust` is `untrusted` | Set `trust: full` (doc 6) |
 
 ## If LinkedIn refuses the Advertising API
