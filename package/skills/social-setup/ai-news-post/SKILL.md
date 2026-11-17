@@ -43,9 +43,9 @@ Goal: once per run, find the single most important AI news from the last 7 days 
 ## The brain scale (pick one level)
 - **Galaxy Brain**: real, big, and the crowd agrees.
 - **Gigabrain**: smart move, people are impressed.
-- **Brain Present**: decent, mixed reactions.
+- **Brain.exe**: it runs, but laggy. Decent, mixed reactions.
 - **Smooth Brain**: sounds big, details thin, the crowd is rolling its eyes.
-- **Brain.exe Not Responding**: the hype ran ahead of the facts.
+- **No Brain**: the hype ran ahead of the facts. Nobody was home.
 - No sentiment available: skip the verdict.
 - Verdict lines are one flat sentence. Example: "Verdict: Smooth Brain. Cheaper, yes. The benchmarks are the company's own."
 - The scale label may be the only playful thing in the post. No emojis.
