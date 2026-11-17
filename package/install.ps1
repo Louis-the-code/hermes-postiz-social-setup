@@ -29,7 +29,7 @@ New-Item -ItemType Directory -Force -Path $Backup | Out-Null
 foreach ($f in @("config.yaml", "SOUL.md")) { $p = Join-Path $HermesHome $f; if (Test-Path $p) { Copy-Item $p $Backup } }
 Write-Host "Backup: $Backup" -ForegroundColor Green
 
-$All = @("sourced-research", "notes-rag", "scoped-automation", "safe-scraping", "social-posting")
+$All = @("sourced-research", "notes-rag", "scoped-automation", "safe-scraping", "social-posting", "ai-news-post")
 
 # 2. Default profile
 Write-Host "DEFAULT profile" -ForegroundColor Cyan
