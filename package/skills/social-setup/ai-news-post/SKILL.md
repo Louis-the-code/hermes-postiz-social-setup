@@ -55,7 +55,8 @@ Goal: once per run, find the single most important AI news from the last 7 days 
 
 ## Publishing
 - Respect posting-mode.txt: `auto` schedule it, `draft` create a draft.
-- Schedule for 08:30 to 09:30 Europe/Berlin on the day of the run unless told otherwise.
+- This job runs at night. Schedule the post for the next morning, 08:30 to 09:30 Europe/Berlin, unless told otherwise. Never schedule it in the past or for the same night.
+- Look at what is already scheduled for that morning first. One news post per day at most.
 - Check postsListTool first, so there are no duplicates.
 - If the research finds nothing confirmed and important, do not post. Say so.
 - Report: topic, sources, time, picture yes/no.
